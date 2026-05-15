@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "HTTP sidecar exposing fido-vc-cryptosuite-ts verification to non-Node.js verifier stacks (e.g., walt.id JVM).",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fido4vc/fido-vc-verifier-sidecar.git"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
@@ -10,17 +14,21 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1",
-    "fido-vc-cryptosuite-ts": "file:../fido-vc-cryptosuite-ts",
+    "@fido4vc/fido-vc-cryptosuite-ts": "^1.0.0",
     "morgan": "^1.10.1"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/express": "^5.0.6",
     "@types/morgan": "^1.9.10",
     "@types/node": "^25.0.9",
+    "semantic-release": "^24.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

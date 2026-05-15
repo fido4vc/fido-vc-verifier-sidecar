@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { getCryptosuiteForDocument } from 'fido-vc-cryptosuite-ts'
+import { getCryptosuiteForDocument } from '@fido4vc/fido-vc-cryptosuite-ts'
 import morgan from 'morgan';
 
 const port = process.env.PORT || 8081;
