@@ -18,7 +18,7 @@ Internally, `/verify` calls `getCryptosuiteForDocument(vp)` from [`fido-vc-crypt
 
 The FIDO4VC reference deployment uses [walt.id](https://walt.id) for the cloud wallet, issuer, and verifier APIs. walt.id is JVM/Kotlin; the cryptosuite reference implementation is Node/TS. Rather than maintain a second Kotlin port (though one exists), the sidecar lets walt.id's verifier-policy framework delegate `ldp_vp` verification over a local HTTP call.
 
-walt.id's `LdSignaturePolicy` is preconfigured to call this sidecar at `http://localhost:8081/verify`.
+walt.id's `LdSignaturePolicy` calls this sidecar at `http://<sidecar-host>:8081/verify`, with `<sidecar-host>` defaulting to `localhost` — i.e. the sidecar runs on the same host (or in the same docker network / Kubernetes pod) as the walt.id verifier. Override `LdSignaturePolicy(baseUrl = ...)` for split-host deployments.
 
 ## Prerequisites
 
